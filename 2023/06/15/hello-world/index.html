@@ -183,7 +183,7 @@
   const ipt = document.querySelector('#search-input')
   const btn = document.querySelector('#search-btn')
   const layer = document.querySelector('#search-layer')
-  const posts = JSON.parse(`[{"title":"Hello World","path":"2023/06/15/hello-world/"},{"title":"My New Post","cover":"/medias/img5.jpg","path":"2023/06/25/My-New-Post/"}]`)
+  const posts = JSON.parse(`[{"title":"Hello World","path":"2023/06/15/hello-world/"},{"title":"My New Post","cover":"/medias/img5.jpg","path":"2023/06/25/My-New-Post/"},{"title":"My New Post","cover":"/medias/img6.jpg","path":"2023/06/25/对婚姻的理解/"}]`)
   ipt.addEventListener('keyup', e => {
     if (e.key === 'Enter') {
       handleSearch()
@@ -248,13 +248,13 @@
       <div class="main-left--statics">
         <a href="/categories">
           <div>
-            <span>1</span>
+            <span>2</span>
             <span>分类</span>
           </div>
         </a>
         <a href="/tags">
           <div>
-            <span>2</span>
+            <span>4</span>
             <span>标签</span>
           </div>
         </a>
@@ -317,11 +317,11 @@
       </h5>
       <p class="main-left--subtitle">
         <span>文章数目：</span>
-        <span>2 篇</span>
+        <span>3 篇</span>
       </p>
       <p class="main-left--subtitle">
         <span>最近动态：</span>
-        <span>昨天</span>
+        <span>今天</span>
       </p>
       <p class="main-left--subtitle">
         <span>上线时间：</span>
@@ -425,7 +425,7 @@ pre:active {
           
             <p>
               <span>上一篇：</span>
-              <a href="/2023/06/25/My-New-Post/">My New Post</a>
+              <a href="/2023/06/25/对婚姻的理解/">My New Post</a>
             </p>
            
           
