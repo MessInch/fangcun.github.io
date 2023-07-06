@@ -336,56 +336,111 @@
 </div></div>
       <div id="main-container" class="main-container">
 
-    
 
-<div class="index">
-  <div class="index-left">
-    
-      <div class="index-article">
-        <img class="index-article--cover" src="/medias/img6.jpg" alt="">
-        <div class="index-article--content">
-          <a href="/2023/07/03/My-New-Post1/">对婚姻的理解 </a>
-          <div>
-            <p>
-              <a class="post-category-link" href="/categories/%E6%83%85%E6%84%9F/">情感</a>
-            </p>
-            <p>
-              <a class="-link" href="/tags/%E7%88%B1%E6%83%85/" rel="tag">爱情</a><span> ◆ </span><a class="-link" href="/tags/%E5%A9%9A%E5%A7%BB/" rel="tag">婚姻</a>
-            </p>
-          </div>
-          <div class="bg"></div>
+  <style>
+pre::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+  background-color:#F5F5F5;
+}
+/*定义滚动条轨道
+内阴影+圆角*/
+pre::-webkit-scrollbar-track {
+  background-color:#F5F5F5;
+}
+/*定义滑块
+内阴影+圆角*/
+pre::-webkit-scrollbar-thumb {
+  background-color: rgb(69, 83, 100);
+}
+
+pre:active {
+  background-color: rgb(81, 95, 116);
+}
+</style>
+
+<div class="article-container">
+  <div class="article">
+    <h1 class="article-title"></h1>
+    <div class="article-info">
+      <div class="article-info--item">
+        <div class="article-info--info">
+          
+          
+          <p class="article-info--date">日期：2023-07-06 14:49:22</p>
         </div>
+        <img src="/imgs/default-cover.webp" alt="" class="article-cover">
       </div>
+    </div>
+    <article class="article-content">
+      <img decoding="async" src="/imgs/pyq1.jpg" style="width: 200px; height: 300px; margin-left: 10px;">
+    </article>
+    
+    <div class="read-nums">
+      <!-- id 将作为查询条件 -->
+      <span id="log/logName-20.html" class="leancloud_visitors" data-flag-title="Your Article Title">
+        <em class="post-meta-item-text">浏览量</em>
+        <i class="leancloud-visitors-count"></i>
+      </span>
+    </div>
+    <div class="comments-intro">
+      <h2>评论区</h2>
+      <p>欢迎你留下宝贵的意见，昵称输入QQ号会显示QQ头像哦~</p>
+    </div>
+    <div id="vcomments" class="vcomments"></div>
     
   </div>
-  <div class="index-center">
-    
-      <div class="index-article">
-        <img class="index-article--cover" src="/imgs/default-cover.webp" alt="">
-        <div class="index-article--content">
-          <a href="/2023/06/15/hello-world/">Hello World </a>
-          <div>
-            <p>
-              <a class="category-link" href="/categories/Python/">Python</a>
-            </p>
-            <p>
-              <a class="-link" href="/tags/Jupyter/" rel="tag">Jupyter</a><span> ◆ </span><a class="-link" href="/tags/Anaconda/" rel="tag">Anaconda</a>
-            </p>
-          </div>
-          <div class="bg"></div>
-        </div>
+  <div class="article-catelogue">
+    <div class="article-catelogue--wrapper">
+      <div class="catelogue catelogue-1">
+        <h3>目录</h3>
+        
       </div>
-    
-  </div>
-  <div class="index-right">
-    <div class="index-right-wrapper">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%83%85%E6%84%9F/">情感</a></li></ul>
-      <ul class="tags" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%B1%E6%83%85/" rel="tag">爱情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A9%9A%E5%A7%BB/" rel="tag">婚姻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jupyter/" rel="tag">Jupyter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anaconda/" rel="tag">Anaconda</a></li></ul>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">2023年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">2023年06月</a><span class="archive-list-count">1</span></li></ul>
+      
     </div>
   </div>
 </div>
- 
+
+<script src="/js/prism.js"></script>
+
+<script>
+  // var定义，避免pjax重新进来造成的重复声明错误
+  var config = JSON.parse('{"enable":true,"appId":"Pf8zCXGEH1qsprnWfikVVujL-gzGzoHsz","appKey":"qOqoiUHhH1TGtLRUYURkLRQX","placeholder":"请留下你宝贵的意见吧~","meta":["nick"],"recordIP":true,"visitor":true,"enableQQ":true}')
+  new Valine({
+    el: '#vcomments',
+    appId: config.appId,
+    appKey: config.appKey,
+    placeholder: config.placeholder,
+    meta: config.meta,
+    recordIP: config.recordIP,
+    visitor: config.visitor,
+    enableQQ: config.enableQQ,
+    path: 'log/logName-20.html'
+  })
+</script>
+
+
+<script>
+  $(document).on('pjax:complete', function() {
+    const tocs = document.querySelector('.toc')
+    const as = tocs ? tocs.querySelectorAll('a') : []
+    as.forEach(a => {
+      a.addEventListener('click', e => {
+        const href = decodeURIComponent(a.href)
+        href.search(/#(.*)/)
+        const id = RegExp.$1
+        const target = document.querySelector('#' + id)
+        const top = target.offsetTop
+        document.documentElement.scrollTo({
+          top: top - 100,
+          behavior: 'smooth'
+        })
+        e.preventDefault()
+      })
+    })
+  })
+</script> 
+
 </div>
       <div class="main-right-wrapper"><div class="main-right">
   <div class="main-right--board">
